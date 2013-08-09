@@ -14,7 +14,7 @@ module Sinatra
           @app.call(env)
         else
           env['rack.session']['google-auth-redirect'] = env['REQUEST_PATH']
-          location = File.join(env['REQUEST_PATH'], '/auth/google_apps')
+          location = '/auth/google_apps'
           return [301, {'Content-Type' => 'text/html', 'Location' => location}, []]
         end
       end
